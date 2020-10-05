@@ -198,8 +198,8 @@ header {
             }
         }
         .moonplo {
-            margin-top: 48px;
-            letter-spacing: 0.48em;
+            margin: 48px 0 0 10px;
+            //letter-spacing: 0.48em;
             @include transition(0.35s, ease);
         }
         .spark-joy-walter {
@@ -213,7 +213,7 @@ header {
     height: 100px;
     @include font(20px, 500, 0.1em, 20px, $main-color);
     background-color: $header-color;
-    box-shadow: 0px 3px 6px rgba($font-color, 0.16);
+    box-shadow: 0px 3px 3px rgba($font-color, 0.16);
 
     &::before {
         display: none;
@@ -256,8 +256,8 @@ header {
             }
         }
         .moonplo {
-            margin-top: 40px;
-            letter-spacing: 0.48em;
+            margin: 40px 0 0 0;
+            //letter-spacing: 0.48em;
         }
     }
 }
@@ -275,21 +275,45 @@ h1 {
 
 .main {
     position: relative;
+    .cover {
+        position: absolute;
+        right: 140px;
+        bottom: 90px;
+        img {
+            width: auto;
+            height: 60vh;
+        }
+    }
     .info {
         position: absolute;
         left: 140px;
         bottom: 120px;
-        @include font(50px, 400, 0, 50px, $main-color);
+        @include font(24px, 400, 0, 36px, $main-color);
         font-family: $font-family;
         .date {
-            margin: 10px 0;
+            margin: 20px 0;
+            font-size: 36px;
+            span {
+                font-size: 52px;
+            }
         }
         .time {
             margin: 10px 20px;
+            letter-spacing: 0.1em;
+            span {
+                font-size: 32px;
+            }
+        }
+        .place {
+            font-size: 20px;
+            letter-spacing: 0.1em;
+            font-family: $content-font-family;
         }
         .address {
             margin: 0 10px;
-            font-size: 28px;
+            font-size: 20px;
+            letter-spacing: 0.1em;
+            font-family: $content-font-family;
         }
     }
 }
@@ -360,11 +384,54 @@ form {
 .title {
     padding-bottom: 17px;
     @include font(28px, 700, 0.1em, 38px, $accent-color);
+    span {
+        font-size: 24px;
+    }
 }
 
 .content {
-    @include font(20px, 400, 0, 36px, $font-color);
+    @include font(18px, 400, 0, 32px, $font-color);
     font-family: $content-font-family;
+    span {
+        padding-right: 10px;
+        @include font(28px, 400, 0, 30px, $accent-color);
+        font-family: $font-family;
+    }
+    b {
+        font-weight: 700;
+        font-size: 20px;
+    }
+    i {
+        color: $main-color;
+    }
+    .soon {
+        position: relative;
+        &::before {
+            z-index: 2;
+            content: "Coming Soon!";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            @include font(40px, 700, 0, 30px, #ffffff);
+            font-family: $font-family;
+            font-style: italic;
+        }
+        &::after {
+            z-index: 1;
+            content: "";
+            width: 520px;
+            height: 301.61px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: rgba($accent-color, 0.7);
+        }
+        img {
+            width: 520px;
+            height: 301.61px;
+        }
+    }
 }
 
 .start-joy-wrapper {
@@ -373,7 +440,7 @@ form {
 
 .start-joy-container {
     width: 1120px;
-    padding: 60px 0;
+    padding: 200px 0 60px 0;
     position: relative;
 
     #sparkJoy,
@@ -392,7 +459,7 @@ form {
     #sparkJoy {
         width: 670px;
         margin: 60px 0;
-        padding: 100px 113px;
+        padding: 100px 70px 90px 113px;
         background-color: $secondary-color;
         border-radius: 80% 60% 90% 70%;
         @include transition(0.6s, ease);
@@ -404,9 +471,9 @@ form {
     }
 
     #timeArt {
-        width: 800px;
+        width: 760px;
         margin: 60px 0;
-        padding: 80px 160px;
+        padding: 70px 120px;
         border: 1px solid $main-color;
         border-radius: 80% 75% 70% 70%;
         text-align: right;
@@ -422,8 +489,8 @@ form {
 
         &::after {
             content: "";
-            width: 800px;
-            height: 560px;
+            width: 760px;
+            height: 540px;
             position: absolute;
             top: -5px;
             left: 10px;
