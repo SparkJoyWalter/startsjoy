@@ -1,0 +1,556 @@
+@import "./reset";
+
+/***********************
+* VARIABLES
+ ***********************/
+// font
+$font-family: "Playfair Display", "Noto Serif TC", serif;
+$content-font-family: "Noto Sans TC", sans-serif;
+$font-color: #222222;
+// color
+$main-color: #596a5e;
+$secondary-color: #f2eae3;
+$third-color: #dbc6b5;
+$accent-color: #ac6249;
+$header-color: #fcf5e8;
+// mask
+$mask: rgba(#222222, 0.8);
+
+@mixin font($size, $weight, $spacing, $line-height, $color) {
+    font-size: $size;
+    font-weight: $weight;
+    letter-spacing: $spacing;
+    line-height: $line-height;
+    color: $color;
+}
+
+@mixin flex($horizontal, $vertical) {
+    display: flex;
+    justify-content: $horizontal;
+    align-items: $vertical;
+}
+
+@mixin transition($duration, $function) {
+    -webkit-transition: all $duration $function;
+    -moz-transition: all $duration $function;
+    -ms-transition: all duration $function;
+    -o-transition: all duration $function;
+    transition: all duration $function;
+}
+
+@mixin animation($name, $duration, $mode) {
+    -webkit-animation: $name $duration $mode;
+    -moz-animation: $name $duration $mode;
+    -o-animation: $name $duration $mode;
+    animation: $name $duration $mode;
+}
+
+// device
+$pad: 960px;
+$mobile: 796px;
+
+@mixin pad {
+    @media (max-width: $pad) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+//
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    // hide scroll bar
+    overflow: -moz-hidden-unscrollable;
+}
+
+body::-webkit-scrollbar {
+    // hide scroll bar
+    display: none;
+}
+
+body {
+    color: $font-color;
+    font-family: $font-family;
+    // hide scroll bar
+    -ms-overflow-style: none;
+    height: 100%;
+    overflow: auto;
+}
+
+.container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.btn {
+    display: block;
+    width: 180px;
+    height: 40px;
+    margin: 20px 0;
+    @include font(16px, 400, 0.05em, 40px, $main-color);
+    font-family: $content-font-family;
+    text-align: center;
+    border: 1px solid $main-color;
+    border-radius: 6px;
+    @include transition(0.3s, ease);
+    @include animation(pulse, 1s, infinite);
+
+    &:hover {
+        color: $accent-color;
+        border-color: $accent-color;
+    }
+}
+
+//
+.fixed {
+    z-index: 99;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+    @include flex(center, center);
+    background-color: #ffffff;
+    border: 1px solid $main-color;
+    border-radius: 50%;
+    box-shadow: 0px 3px 10px rgba($font-color, 0.16);
+    @include transition(0.3s, ease);
+
+    &:hover {
+        cursor: pointer;
+        bottom: 25px;
+    }
+}
+
+//
+section {
+    width: 100vw;
+}
+
+//
+header {
+    z-index: 9;
+    position: fixed;
+    @include font(24px, 500, 0.1em, 35px, $main-color);
+    &::before {
+        content: "";
+        height: 90px;
+        position: absolute;
+        left: 335px;
+        top: 0;
+        border-left: 1px solid $main-color;
+    }
+    .logo {
+        position: relative;
+        top: 90px;
+        left: 240px;
+        &::before {
+            content: "";
+            height: 40px;
+            position: absolute;
+            top: 40px;
+            left: 90px;
+            border-left: 1px solid $main-color;
+            transform: rotate(45deg);
+            @include transition(0.3s, ease);
+        }
+        &::after {
+            content: "";
+            height: 40px;
+            position: absolute;
+            top: 40px;
+            left: 90px;
+            border-left: 1px solid $main-color;
+            transform: rotate(-45deg);
+            @include transition(0.3s, ease);
+        }
+        &:hover {
+            cursor: pointer;
+            &::before {
+                transform: rotate(30deg);
+            }
+            &::after {
+                transform: rotate(-60deg);
+            }
+            .spark-joy-walter {
+                transform: rotate(5deg);
+            }
+            .moonplo {
+                transform: rotate(-10deg);
+            }
+        }
+        .moonplo {
+            margin-top: 48px;
+            letter-spacing: 0.48em;
+            @include transition(0.35s, ease);
+        }
+        .spark-joy-walter {
+            @include transition(0.25s, ease);
+        }
+    }
+}
+
+.header {
+    width: 100vw;
+    height: 100px;
+    @include font(20px, 500, 0.1em, 20px, $main-color);
+    background-color: $header-color;
+    box-shadow: 0px 3px 6px rgba($font-color, 0.16);
+
+    &::before {
+        display: none;
+    }
+    .logo {
+        position: relative;
+        top: 10px;
+        left: 140px;
+        &::before {
+            content: "";
+            height: 30px;
+            position: absolute;
+            top: 25px;
+            left: 80px;
+            border-left: 1px solid $main-color;
+            transform: rotate(45deg);
+        }
+        &::after {
+            content: "";
+            height: 30px;
+            position: absolute;
+            top: 25px;
+            left: 80px;
+            border-left: 1px solid $main-color;
+            transform: rotate(-45deg);
+        }
+        &:hover {
+            cursor: pointer;
+            &::before {
+                transform: rotate(45deg);
+            }
+            &::after {
+                transform: rotate(-45deg);
+            }
+            .spark-joy-walter {
+                transform: rotate(0deg);
+            }
+            .moonplo {
+                transform: rotate(0deg);
+            }
+        }
+        .moonplo {
+            margin-top: 40px;
+            letter-spacing: 0.48em;
+        }
+    }
+}
+
+//
+.main {
+    height: 100vh;
+}
+
+h1 {
+    margin-bottom: 30px;
+    text-align: center;
+    @include font(30px, 500, 0.4em, 44px, $main-color);
+}
+
+.main {
+    position: relative;
+    .info {
+        position: absolute;
+        left: 140px;
+        bottom: 120px;
+        @include font(50px, 400, 0, 50px, $main-color);
+        font-family: $font-family;
+        .date {
+            margin: 10px 0;
+        }
+        .time {
+            margin: 10px 20px;
+        }
+        .address {
+            margin: 0 10px;
+            font-size: 28px;
+        }
+    }
+}
+
+//
+.count {
+    height: auto;
+    padding: 200px 140px 100px 140px;
+}
+
+form {
+    @include font(16px, 400, 0, 24px, $font-color);
+    font-family: $content-font-family;
+
+    input,
+    select {
+        height: 30px;
+        margin: 10px;
+        padding: 2px 8px;
+        border-radius: 4px;
+    }
+
+    input[type="radio"] {
+        margin-right: 10px;
+    }
+
+    input[type="radio"] {
+        width: 18px;
+        height: 18px;
+        position: relative;
+
+        &:before {
+            content: "";
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid $main-color;
+            border-radius: 50%;
+            background: #ffffff;
+        }
+
+        &:checked:after {
+            content: "";
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background-color: $main-color;
+        }
+    }
+
+    .group {
+        margin: 20px 10px;
+    }
+    .row {
+        @include flex(flex-start, center);
+    }
+}
+
+//
+
+.title {
+    padding-bottom: 17px;
+    @include font(28px, 700, 0.1em, 38px, $accent-color);
+}
+
+.content {
+    @include font(20px, 400, 0, 36px, $font-color);
+    font-family: $content-font-family;
+}
+
+.start-joy-wrapper {
+    @include flex(center, center);
+}
+
+.start-joy-container {
+    width: 1120px;
+    padding: 60px 0;
+    position: relative;
+
+    #sparkJoy,
+    #startJoy {
+        position: relative;
+    }
+
+    #timeArt {
+        position: relative;
+        left: calc(1120px - 800px);
+        .title {
+            color: $main-color;
+        }
+    }
+
+    #sparkJoy {
+        width: 670px;
+        margin: 60px 0;
+        padding: 100px 113px;
+        background-color: $secondary-color;
+        border-radius: 80% 60% 90% 70%;
+        @include transition(0.6s, ease);
+
+        &:hover {
+            cursor: pointer;
+            border-radius: 86% 64% 88% 75%;
+        }
+    }
+
+    #timeArt {
+        width: 800px;
+        margin: 60px 0;
+        padding: 80px 160px;
+        border: 1px solid $main-color;
+        border-radius: 80% 75% 70% 70%;
+        text-align: right;
+        @include transition(0.8s, ease);
+
+        &:hover {
+            cursor: pointer;
+            border-radius: 86% 64% 88% 75%;
+            &::after {
+                border-radius: 80% 75% 70% 70%;
+            }
+        }
+
+        &::after {
+            content: "";
+            width: 800px;
+            height: 560px;
+            position: absolute;
+            top: -5px;
+            left: 10px;
+            border: 1px solid $third-color;
+            border-radius: 74% 70% 77% 78%;
+            @include transition(0.8s, ease);
+        }
+        .content {
+            iframe {
+                min-width: 480px;
+                width: 480px;
+                max-width: 480px;
+            }
+        }
+    }
+
+    #startJoy {
+        width: 640px;
+        margin: 60px 0;
+        padding: 100px 100px;
+        background-color: $header-color;
+        border-radius: 60% 70% 63% 78%;
+        //@include transition(0.5s, ease);
+        &:hover {
+            cursor: pointer;
+            @include animation(shake, 1s, infinite);
+            //border-radius: 74% 70% 77% 78%;
+        }
+    }
+}
+
+#join {
+    background: $secondary-color;
+    @include flex(center, center);
+}
+
+.join-container {
+    width: 1120px;
+    padding: 80px 0;
+    h1 {
+        color: $accent-color;
+    }
+    p {
+        font-family: $content-font-family;
+    }
+    .paragraph-wrap {
+        margin-top: 50px;
+    }
+    .bonus-container {
+        margin: 20px 0;
+        font-family: $content-font-family;
+        text-align: center;
+        @include flex(space-between, center);
+
+        .bonus-item {
+            @include transition(0.3s, ease);
+            &:hover {
+                cursor: pointer;
+                .icon {
+                    transform: rotate(10deg);
+                    background-color: rgba(#ffffff, 1);
+                }
+                .bonus {
+                    color: $main-color;
+                }
+            }
+        }
+        .icon {
+            width: 180px;
+            height: 180px;
+            margin-bottom: 16px;
+            @include flex(center, center);
+            border-radius: 50%;
+            background-color: rgba(#ffffff, 0.6);
+            box-shadow: 0px 3px 10px rgba($font-color, 0.16);
+        }
+    }
+}
+
+.add-office-account-btn {
+    @include transition(0.3s, ease);
+    &:hover {
+        opacity: 0.6;
+    }
+    img {
+        margin: 20px 0;
+        height: 50px;
+    }
+}
+
+//
+
+footer {
+    height: 80px;
+    @include flex(center, center);
+    @include font(10px, 400, 0, 20px, #ffffff);
+    font-family: $content-font-family;
+    background-color: $main-color;
+    text-align: center;
+    .link-container {
+        margin-top: 12px;
+        img {
+            margin: 0 10px;
+        }
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale3d(1.02, 1.02, 1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes shake {
+    0% {
+        border-radius: 60% 70% 63% 78%;
+    }
+    50% {
+        border-radius: 74% 70% 77% 78%;
+    }
+    100% {
+        border-radius: 60% 70% 63% 78%;
+    }
+}
