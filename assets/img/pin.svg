@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="9.406" height="12.542" viewBox="0 0 9.406 12.542">
+  <g id="pin" transform="translate(-64)">
+    <g data-name="Group 108" transform="translate(64)">
+      <path data-name="Path 180" d="M68.7,0A4.708,4.708,0,0,0,64,4.7c0,3.47,4.339,7.593,4.524,7.768a.262.262,0,0,0,.358,0c.185-.174,4.524-4.3,4.524-7.768A4.708,4.708,0,0,0,68.7,0Zm0,7.316A2.613,2.613,0,1,1,71.316,4.7,2.616,2.616,0,0,1,68.7,7.316Z" transform="translate(-64)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

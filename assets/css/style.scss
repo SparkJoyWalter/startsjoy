@@ -1,8 +1,5 @@
 @import "./reset";
 
-/***********************
-* VARIABLES
- ***********************/
 // font
 $font-family: "Playfair Display", "Noto Serif TC", serif;
 $content-font-family: "Noto Sans TC", sans-serif;
@@ -92,6 +89,7 @@ body {
     overflow: auto;
 }
 
+//
 .container {
     position: relative;
     top: 0;
@@ -126,7 +124,7 @@ body {
     height: 50px;
     position: fixed;
     right: 30px;
-    bottom: 20px;
+    bottom: 30px;
     @include flex(center, center);
     background-color: #ffffff;
     border: 1px solid $main-color;
@@ -462,11 +460,12 @@ form {
         padding: 100px 70px 90px 113px;
         background-color: $secondary-color;
         border-radius: 80% 60% 90% 70%;
-        @include transition(0.6s, ease);
+        //@include transition(0.6s, ease);
 
         &:hover {
             cursor: pointer;
-            border-radius: 86% 64% 88% 75%;
+            //border-radius: 86% 64% 88% 75%;
+            @include animation(shake, 1s, infinite);
         }
     }
 
@@ -507,19 +506,19 @@ form {
         }
     }
 
-    #startJoy {
-        width: 640px;
-        margin: 60px 0;
-        padding: 100px 100px;
-        background-color: $header-color;
-        border-radius: 60% 70% 63% 78%;
-        //@include transition(0.5s, ease);
-        &:hover {
-            cursor: pointer;
-            @include animation(shake, 1s, infinite);
-            //border-radius: 74% 70% 77% 78%;
-        }
-    }
+    // #startJoy {
+    //     width: 640px;
+    //     margin: 60px 0;
+    //     padding: 100px 100px;
+    //     background-color: $header-color;
+    //     border-radius: 60% 70% 63% 78%;
+    //     //@include transition(0.5s, ease);
+    //     &:hover {
+    //         cursor: pointer;
+    //         @include animation(shake, 1s, infinite);
+    //         //border-radius: 74% 70% 77% 78%;
+    //     }
+    // }
 }
 
 #join {
@@ -582,18 +581,53 @@ form {
 }
 
 //
+.location {
+    height: 400px;
+    position: relative;
+    .location-content {
+        z-index: 1;
+        width: 40vw;
+        height: 400px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: rgba($accent-color, 0.5);
+        @include font(14px, 700, 0.05em, 16px, #ffffff);
+        @include flex(center, center);
+    }
+}
 
+//
 footer {
-    height: 80px;
-    @include flex(center, center);
+    height: 140px;
+    @include flex(space-between, center);
     @include font(10px, 400, 0, 20px, #ffffff);
     font-family: $content-font-family;
     background-color: $main-color;
     text-align: center;
+    .copyright {
+        margin: 0 40px;
+        // @include flex(flex-start, center);
+    }
     .link-container {
+        @include flex(flex-start, center);
         margin-top: 12px;
         img {
             margin: 0 10px;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+    .logo {
+        margin-right: 70px;
+        @include flex(flex-start, center);
+        #walter {
+            margin-right: -10px;
+            height: 60px;
+        }
+        #moonpio {
+            height: 100px;
         }
     }
 }
@@ -612,12 +646,12 @@ footer {
 
 @keyframes shake {
     0% {
-        border-radius: 60% 70% 63% 78%;
+        border-radius: 80% 60% 90% 70%;
     }
     50% {
-        border-radius: 74% 70% 77% 78%;
+        border-radius: 86% 64% 88% 75%;
     }
     100% {
-        border-radius: 60% 70% 63% 78%;
+        border-radius: 80% 60% 90% 70%;
     }
 }
