@@ -206,6 +206,33 @@ header {
     }
 }
 
+@include mobile {
+    header {
+        font-size: 18px;
+        line-height: 30px;
+        &::before {
+            left: 120px;
+        }
+        .logo {
+            top: 90px;
+            left: 30px;
+            &::before {
+                height: 30px;
+                top: 30px;
+                left: 90px;
+            }
+            &::after {
+                height: 30px;
+                top: 30px;
+                left: 90px;
+            }
+            .moonplo {
+                margin: 30px 0 0 10px;
+            }
+        }
+    }
+}
+
 .header {
     width: 100vw;
     height: 100px;
@@ -260,9 +287,29 @@ header {
     }
 }
 
-//
-.main {
-    height: 100vh;
+@include mobile {
+    .header {
+        height: 80px;
+        font-size: 16px;
+        line-height: 20px;
+        .logo {
+            top: 10px;
+            left: 20px;
+            &::before {
+                height: 20px;
+                top: 23px;
+                left: 60px;
+            }
+            &::after {
+                height: 20px;
+                top: 23px;
+                left: 60px;
+            }
+            .moonplo {
+                margin: 25px 0 0 0;
+            }
+        }
+    }
 }
 
 h1 {
@@ -272,6 +319,7 @@ h1 {
 }
 
 .main {
+    height: 100vh;
     position: relative;
     .cover {
         position: absolute;
@@ -316,69 +364,60 @@ h1 {
     }
 }
 
-//
-.count {
-    height: auto;
-    padding: 200px 140px 100px 140px;
-}
-
-form {
-    @include font(16px, 400, 0, 24px, $font-color);
-    font-family: $content-font-family;
-
-    input,
-    select {
-        height: 30px;
-        margin: 10px;
-        padding: 2px 8px;
-        border-radius: 4px;
-    }
-
-    input[type="radio"] {
-        margin-right: 10px;
-    }
-
-    input[type="radio"] {
-        width: 18px;
-        height: 18px;
-        position: relative;
-
-        &:before {
-            content: "";
-            width: 24px;
-            height: 24px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border: 1px solid $main-color;
-            border-radius: 50%;
-            background: #ffffff;
+@include mobile {
+    .main {
+        .cover {
+            top: 240px;
+            right: 0;
+            img {
+                width: 80vw;
+                height: auto;
+            }
         }
-
-        &:checked:after {
-            content: "";
-            width: 16px;
-            height: 16px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            background-color: $main-color;
+        .info {
+            left: 30px;
+            bottom: 30px;
+            font-size: 18px;
+            line-height: 28px;
+            &::after {
+                z-index: 1;
+                content: "";
+                width: 80vw;
+                height: 120px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: rgba(#ffffff, 0.6);
+            }
+            .date {
+                z-index: 2;
+                position: relative;
+                margin: 10px 0;
+                font-size: 26px;
+                span {
+                    font-size: 36px;
+                }
+            }
+            .time {
+                z-index: 2;
+                position: relative;
+                margin: 6px 20px;
+                letter-spacing: 0.1em;
+                span {
+                    font-size: 24px;
+                }
+            }
+            .place {
+                font-size: 14px;
+            }
+            .address {
+                font-size: 14px;
+            }
         }
-    }
-
-    .group {
-        margin: 20px 10px;
-    }
-    .row {
-        @include flex(flex-start, center);
     }
 }
 
 //
-
 .title {
     padding-bottom: 17px;
     @include font(28px, 700, 0.1em, 38px, $accent-color);
@@ -521,6 +560,81 @@ form {
     // }
 }
 
+@include mobile {
+    .content {
+        font-size: 16px;
+        line-height: 30px;
+        b {
+            font-size: 18px;
+        }
+        i {
+            color: $main-color;
+        }
+        .soon {
+            position: relative;
+            &::before {
+                font-size: 30px;
+            }
+            &::after {
+                z-index: 1;
+                content: "";
+                width: calc(100vw - 100px);
+                height: calc(100% - 9px);
+                position: absolute;
+                left: 18px;
+                top: 0;
+            }
+            img {
+                width: calc(100vw - 100px);
+                height: auto;
+            }
+        }
+    }
+
+    .start-joy-container {
+        width: calc(100vw - 40px);
+
+        #timeArt {
+            left: 0px;
+        }
+
+        #sparkJoy {
+            width: calc(100vw - 40px);
+            margin: 40px 0;
+            padding: 30px 20px;
+            border-radius: 10px;
+
+            &:hover {
+                @include animation(pulse, 1s, infinite);
+            }
+        }
+
+        #timeArt {
+            width: calc(100vw - 40px);
+            margin: 40px 0;
+            padding: 30px 20px;
+            border-radius: 10px;
+
+            &:hover {
+                border-radius: 10px;
+                &::after {
+                    border-radius: 10px;
+                }
+            }
+
+            &::after {
+                content: "";
+                width: calc(100vw - 40px);
+                height: calc(100%);
+                top: 8px;
+                left: 5px;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+// join
 #join {
     background: $secondary-color;
     @include flex(center, center);
@@ -546,6 +660,10 @@ form {
 
         .bonus-item {
             @include transition(0.3s, ease);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
             &:hover {
                 cursor: pointer;
                 .icon {
@@ -580,21 +698,45 @@ form {
     }
 }
 
+@include pad {
+    .join-container {
+        width: calc(100vw - 40px);
+        .bonus-container {
+            margin: 20px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .bonus-item {
+                width: 120px;
+                margin: 20px;
+                @include transition(0.3s, ease);
+                &:hover {
+                    cursor: pointer;
+                    .icon {
+                        transform: rotate(10deg);
+                        background-color: rgba(#ffffff, 1);
+                    }
+                    .bonus {
+                        color: $main-color;
+                    }
+                }
+            }
+            .icon {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 16px;
+                @include flex(center, center);
+                border-radius: 50%;
+                background-color: rgba(#ffffff, 0.6);
+                box-shadow: 0px 3px 10px rgba($font-color, 0.16);
+            }
+        }
+    }
+}
+
 //
 .location {
     height: 400px;
-    position: relative;
-    .location-content {
-        z-index: 1;
-        width: 40vw;
-        height: 400px;
-        position: absolute;
-        right: 0;
-        top: 0;
-        background-color: rgba($accent-color, 0.5);
-        @include font(14px, 700, 0.05em, 16px, #ffffff);
-        @include flex(center, center);
-    }
 }
 
 //
@@ -621,13 +763,36 @@ footer {
     }
     .logo {
         margin-right: 70px;
-        @include flex(flex-start, center);
+        @include flex(flex-end, center);
         #walter {
             margin-right: -10px;
             height: 60px;
         }
         #moonpio {
             height: 100px;
+        }
+    }
+}
+
+@include mobile {
+    footer {
+        height: 180px;
+        flex-direction: column;
+        .copyright {
+            margin: 10px;
+        }
+        .link-container {
+            @include flex(center, center);
+        }
+        .logo {
+            margin-right: 0;
+            #walter {
+                margin-right: 0px;
+                height: 39px;
+            }
+            #moonpio {
+                height: 65px;
+            }
         }
     }
 }
