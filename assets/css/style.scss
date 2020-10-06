@@ -408,9 +408,13 @@ h1 {
                 }
             }
             .place {
+                z-index: 2;
+                position: relative;
                 font-size: 14px;
             }
             .address {
+                z-index: 2;
+                position: relative;
                 font-size: 14px;
             }
         }
