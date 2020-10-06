@@ -750,7 +750,7 @@ footer {
     @include font(10px, 400, 0, 20px, #ffffff);
     font-family: $content-font-family;
     background-color: $main-color;
-    text-align: center;
+    text-align: left;
     .copyright {
         margin: 0 40px;
         // @include flex(flex-start, center);
@@ -782,6 +782,7 @@ footer {
     footer {
         height: 180px;
         flex-direction: column;
+        text-align: center;
         .copyright {
             margin: 10px;
         }
