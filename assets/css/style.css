@@ -334,12 +334,12 @@ header .logo:hover .spark-joy-walter {
           transform: rotate(5deg);
 }
 
-header .logo:hover .moonplo {
+header .logo:hover .moonpio {
   -webkit-transform: rotate(-10deg);
           transform: rotate(-10deg);
 }
 
-header .logo .moonplo {
+header .logo .moonpio {
   margin: 48px 0 0 10px;
   -webkit-transition: all 0.35s ease;
   -webkit-transition: all duration ease;
@@ -374,7 +374,7 @@ header .logo .spark-joy-walter {
     top: 30px;
     left: 90px;
   }
-  header .logo .moonplo {
+  header .logo .moonpio {
     margin: 30px 0 0 10px;
   }
 }
@@ -443,12 +443,12 @@ header .logo .spark-joy-walter {
           transform: rotate(0deg);
 }
 
-.header .logo:hover .moonplo {
+.header .logo:hover .moonpio {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
 }
 
-.header .logo .moonplo {
+.header .logo .moonpio {
   margin: 40px 0 0 0;
 }
 
@@ -472,7 +472,7 @@ header .logo .spark-joy-walter {
     top: 23px;
     left: 60px;
   }
-  .header .logo .moonplo {
+  .header .logo .moonpio {
     margin: 25px 0 0 0;
   }
 }

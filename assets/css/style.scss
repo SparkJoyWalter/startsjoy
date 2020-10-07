@@ -1,8 +1,11 @@
 @import "./reset";
 
 // font
-$font-family: "Playfair Display", "Noto Serif TC", serif;
-$content-font-family: "Noto Sans TC", sans-serif;
+$font-family: "Playfair Display",
+"Noto Serif TC",
+serif;
+$content-font-family: "Noto Sans TC",
+sans-serif;
 $font-color: #222222;
 // color
 $main-color: #596a5e;
@@ -148,6 +151,7 @@ header {
     z-index: 9;
     position: fixed;
     @include font(24px, 500, 0.1em, 35px, $main-color);
+
     &::before {
         content: "";
         height: 90px;
@@ -156,10 +160,12 @@ header {
         top: 0;
         border-left: 1px solid $main-color;
     }
+
     .logo {
         position: relative;
         top: 90px;
         left: 240px;
+
         &::before {
             content: "";
             height: 40px;
@@ -170,6 +176,7 @@ header {
             transform: rotate(45deg);
             @include transition(0.3s, ease);
         }
+
         &::after {
             content: "";
             height: 40px;
@@ -180,26 +187,33 @@ header {
             transform: rotate(-45deg);
             @include transition(0.3s, ease);
         }
+
         &:hover {
             cursor: pointer;
+
             &::before {
                 transform: rotate(30deg);
             }
+
             &::after {
                 transform: rotate(-60deg);
             }
+
             .spark-joy-walter {
                 transform: rotate(5deg);
             }
-            .moonplo {
+
+            .moonpio {
                 transform: rotate(-10deg);
             }
         }
-        .moonplo {
+
+        .moonpio {
             margin: 48px 0 0 10px;
             //letter-spacing: 0.48em;
             @include transition(0.35s, ease);
         }
+
         .spark-joy-walter {
             @include transition(0.25s, ease);
         }
@@ -210,23 +224,28 @@ header {
     header {
         font-size: 18px;
         line-height: 30px;
+
         &::before {
             left: 120px;
         }
+
         .logo {
             top: 90px;
             left: 30px;
+
             &::before {
                 height: 30px;
                 top: 30px;
                 left: 90px;
             }
+
             &::after {
                 height: 30px;
                 top: 30px;
                 left: 90px;
             }
-            .moonplo {
+
+            .moonpio {
                 margin: 30px 0 0 10px;
             }
         }
@@ -243,10 +262,12 @@ header {
     &::before {
         display: none;
     }
+
     .logo {
         position: relative;
         top: 10px;
         left: 140px;
+
         &::before {
             content: "";
             height: 30px;
@@ -256,6 +277,7 @@ header {
             border-left: 1px solid $main-color;
             transform: rotate(45deg);
         }
+
         &::after {
             content: "";
             height: 30px;
@@ -265,22 +287,28 @@ header {
             border-left: 1px solid $main-color;
             transform: rotate(-45deg);
         }
+
         &:hover {
             cursor: pointer;
+
             &::before {
                 transform: rotate(45deg);
             }
+
             &::after {
                 transform: rotate(-45deg);
             }
+
             .spark-joy-walter {
                 transform: rotate(0deg);
             }
-            .moonplo {
+
+            .moonpio {
                 transform: rotate(0deg);
             }
         }
-        .moonplo {
+
+        .moonpio {
             margin: 40px 0 0 0;
             //letter-spacing: 0.48em;
         }
@@ -292,20 +320,24 @@ header {
         height: 80px;
         font-size: 16px;
         line-height: 20px;
+
         .logo {
             top: 10px;
             left: 20px;
+
             &::before {
                 height: 20px;
                 top: 23px;
                 left: 60px;
             }
+
             &::after {
                 height: 20px;
                 top: 23px;
                 left: 60px;
             }
-            .moonplo {
+
+            .moonpio {
                 margin: 25px 0 0 0;
             }
         }
@@ -321,40 +353,49 @@ h1 {
 .main {
     height: 100vh;
     position: relative;
+
     .cover {
         position: absolute;
         right: 140px;
         bottom: 90px;
+
         img {
             width: auto;
             height: 60vh;
         }
     }
+
     .info {
         position: absolute;
         left: 140px;
         bottom: 120px;
         @include font(24px, 400, 0, 36px, $main-color);
         font-family: $font-family;
+
         .date {
             margin: 20px 0;
             font-size: 36px;
+
             span {
                 font-size: 52px;
             }
         }
+
         .time {
             margin: 10px 20px;
             letter-spacing: 0.1em;
+
             span {
                 font-size: 32px;
             }
         }
+
         .place {
             font-size: 20px;
             letter-spacing: 0.1em;
             font-family: $content-font-family;
         }
+
         .address {
             margin: 0 10px;
             font-size: 20px;
@@ -369,16 +410,19 @@ h1 {
         .cover {
             top: 240px;
             right: 0;
+
             img {
                 width: 80vw;
                 height: auto;
             }
         }
+
         .info {
             left: 30px;
             bottom: 30px;
             font-size: 18px;
             line-height: 28px;
+
             &::after {
                 z-index: 1;
                 content: "";
@@ -389,29 +433,35 @@ h1 {
                 left: 0;
                 background-color: rgba(#ffffff, 0.6);
             }
+
             .date {
                 z-index: 2;
                 position: relative;
                 margin: 10px 0;
                 font-size: 26px;
+
                 span {
                     font-size: 36px;
                 }
             }
+
             .time {
                 z-index: 2;
                 position: relative;
                 margin: 6px 20px;
                 letter-spacing: 0.1em;
+
                 span {
                     font-size: 24px;
                 }
             }
+
             .place {
                 z-index: 2;
                 position: relative;
                 font-size: 14px;
             }
+
             .address {
                 z-index: 2;
                 position: relative;
@@ -425,6 +475,7 @@ h1 {
 .title {
     padding-bottom: 17px;
     @include font(28px, 700, 0.1em, 38px, $accent-color);
+
     span {
         font-size: 24px;
     }
@@ -433,20 +484,25 @@ h1 {
 .content {
     @include font(18px, 400, 0, 32px, $font-color);
     font-family: $content-font-family;
+
     span {
         padding-right: 10px;
         @include font(28px, 400, 0, 30px, $accent-color);
         font-family: $font-family;
     }
+
     b {
         font-weight: 700;
         font-size: 20px;
     }
+
     i {
         color: $main-color;
     }
+
     .soon {
         position: relative;
+
         &::before {
             z-index: 2;
             content: "Coming Soon!";
@@ -458,6 +514,7 @@ h1 {
             font-family: $font-family;
             font-style: italic;
         }
+
         &::after {
             z-index: 1;
             content: "";
@@ -468,6 +525,7 @@ h1 {
             top: 0;
             background: rgba($accent-color, 0.7);
         }
+
         img {
             width: 520px;
             height: 301.61px;
@@ -492,6 +550,7 @@ h1 {
     #timeArt {
         position: relative;
         left: calc(1120px - 800px);
+
         .title {
             color: $main-color;
         }
@@ -524,6 +583,7 @@ h1 {
         &:hover {
             cursor: pointer;
             border-radius: 86% 64% 88% 75%;
+
             &::after {
                 border-radius: 80% 75% 70% 70%;
             }
@@ -540,6 +600,7 @@ h1 {
             border-radius: 74% 70% 77% 78%;
             @include transition(0.8s, ease);
         }
+
         .content {
             iframe {
                 min-width: 480px;
@@ -568,17 +629,22 @@ h1 {
     .content {
         font-size: 16px;
         line-height: 30px;
+
         b {
             font-size: 18px;
         }
+
         i {
             color: $main-color;
         }
+
         .soon {
             position: relative;
+
             &::before {
                 font-size: 30px;
             }
+
             &::after {
                 z-index: 1;
                 content: "";
@@ -588,6 +654,7 @@ h1 {
                 left: 18px;
                 top: 0;
             }
+
             img {
                 width: calc(100vw - 100px);
                 height: auto;
@@ -621,6 +688,7 @@ h1 {
 
             &:hover {
                 border-radius: 10px;
+
                 &::after {
                     border-radius: 10px;
                 }
@@ -647,15 +715,19 @@ h1 {
 .join-container {
     width: 1120px;
     padding: 80px 0;
+
     h1 {
         color: $accent-color;
     }
+
     p {
         font-family: $content-font-family;
     }
+
     .paragraph-wrap {
         margin-top: 50px;
     }
+
     .bonus-container {
         margin: 20px 0;
         font-family: $content-font-family;
@@ -670,15 +742,18 @@ h1 {
 
             &:hover {
                 cursor: pointer;
+
                 .icon {
                     transform: rotate(10deg);
                     background-color: rgba(#ffffff, 1);
                 }
+
                 .bonus {
                     color: $main-color;
                 }
             }
         }
+
         .icon {
             width: 180px;
             height: 180px;
@@ -693,9 +768,11 @@ h1 {
 
 .add-office-account-btn {
     @include transition(0.3s, ease);
+
     &:hover {
         opacity: 0.6;
     }
+
     img {
         margin: 20px 0;
         height: 50px;
@@ -705,6 +782,7 @@ h1 {
 @include pad {
     .join-container {
         width: calc(100vw - 40px);
+
         .bonus-container {
             margin: 20px 0;
             flex-wrap: wrap;
@@ -714,17 +792,21 @@ h1 {
                 width: 120px;
                 margin: 20px;
                 @include transition(0.3s, ease);
+
                 &:hover {
                     cursor: pointer;
+
                     .icon {
                         transform: rotate(10deg);
                         background-color: rgba(#ffffff, 1);
                     }
+
                     .bonus {
                         color: $main-color;
                     }
                 }
             }
+
             .icon {
                 width: 120px;
                 height: 120px;
@@ -751,27 +833,34 @@ footer {
     font-family: $content-font-family;
     background-color: $main-color;
     text-align: left;
+
     .copyright {
         margin: 0 40px;
         // @include flex(flex-start, center);
     }
+
     .link-container {
         @include flex(flex-start, center);
         margin-top: 12px;
+
         img {
             margin: 0 10px;
+
             &:hover {
                 opacity: 0.8;
             }
         }
     }
+
     .logo {
         margin-right: 70px;
         @include flex(flex-end, center);
+
         #walter {
             margin-right: -10px;
             height: 60px;
         }
+
         #moonpio {
             height: 100px;
         }
@@ -783,18 +872,23 @@ footer {
         height: 180px;
         flex-direction: column;
         text-align: center;
+
         .copyright {
             margin: 10px;
         }
+
         .link-container {
             @include flex(center, center);
         }
+
         .logo {
             margin-right: 0;
+
             #walter {
                 margin-right: 0px;
                 height: 39px;
             }
+
             #moonpio {
                 height: 65px;
             }
@@ -806,9 +900,11 @@ footer {
     0% {
         transform: scale(1);
     }
+
     50% {
         transform: scale3d(1.02, 1.02, 1.02);
     }
+
     100% {
         transform: scale(1);
     }
@@ -818,9 +914,11 @@ footer {
     0% {
         border-radius: 80% 60% 90% 70%;
     }
+
     50% {
         border-radius: 86% 64% 88% 75%;
     }
+
     100% {
         border-radius: 80% 60% 90% 70%;
     }
