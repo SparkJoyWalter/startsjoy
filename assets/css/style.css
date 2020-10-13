@@ -679,6 +679,17 @@ h1 {
   height: 301.61px;
 }
 
+.content .video {
+  max-width: 520px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.content .video iframe {
+  width: 100%;
+  height: 100%;
+}
+
 .start-joy-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -795,6 +806,15 @@ h1 {
   .content .soon img {
     width: calc(100vw - 100px);
     height: auto;
+  }
+  .content .video {
+    max-width: calc(100vw - 80px);
+    height: 300px;
+    overflow: hidden;
+  }
+  .content .video iframe {
+    width: 100%;
+    height: 100%;
   }
   .start-joy-container {
     width: calc(100vw - 40px);
