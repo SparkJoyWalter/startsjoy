@@ -680,6 +680,8 @@ h1 {
 }
 
 .content .video {
+  position: relative;
+  z-index: 3;
   max-width: 520px;
   height: 300px;
   overflow: hidden;
